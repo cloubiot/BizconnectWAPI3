@@ -1,0 +1,8 @@
+use bizconnect;
+CREATE TABLE `service_category` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SERVICE_CATEGORY` varchar(255),
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+alter table service_data add column DEVICE varchar(100) after phone;
+alter table service_data add column ACTION int(1) default 0;

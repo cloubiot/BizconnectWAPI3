@@ -1,0 +1,31 @@
+create database bizconnect;
+
+create user 'bizconnect'@'localhost' identified by 'bizconnect';
+
+grant all privileges on bizconnect.* to bizconnect@localhost;
+
+CREATE TABLE `service_data` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `PHONE` varchar(12) DEFAULT NULL,
+  `SERVICE_CATEGORY` int(11) DEFAULT 0,
+  `SERVICE_TYPE` int(1) DEFAULT 0,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `user_location` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `PHONE` varchar(12) DEFAULT NULL,
+  `LAST_SEEN` datetime,
+  `LATITUDE` varchar(45) DEFAULT NULL,
+  `LONGITUDE` varchar(45) DEFAULT NULL ,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `finder` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SERVICE_CATEGORY` INT(11) DEFAULT 0,
+  `PROVIDER_PHONE` varchar(12) DEFAULT NULL,
+  `CONSUMER_PHONE` varchar(12) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
