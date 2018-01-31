@@ -1,0 +1,2 @@
+use bizconnect;
+alter table service_data change column ACTION ACTIVE INT(1) DEFAULT 0;

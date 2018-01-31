@@ -6,5 +6,5 @@ import com.bizconnect.model.dbentity.ServiceData;
 
 public interface ServiceDataRepository extends CrudRepository<ServiceData,Long> {
 	
-	ServiceData findByPhone(String phone);
+	ServiceData findByPhoneAndServiceCategory(String phone,int serviceCategory);
 }

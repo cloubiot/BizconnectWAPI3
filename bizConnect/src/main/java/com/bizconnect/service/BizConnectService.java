@@ -39,8 +39,8 @@ public class BizConnectService {
 	public List<ActiveSearches> getActiveSearches(String phone){
 		return this.serviceDataQuery.getActiveSearches(phone);
 	}
-	public ServiceData updateSearch(String phone){
-		return this.serviceDataRepository.findByPhone(phone);
+	public ServiceData updateSearch(String phone,int serviceCategory){
+		return this.serviceDataRepository.findByPhoneAndServiceCategory(phone,serviceCategory);
 	}
 	
 }

@@ -4,7 +4,7 @@ public class UpdateSearchRequest {
 
 	String phone;
 	int serviceCategory;
-	int action;
+	int active;
 	public String getPhone() {
 		return phone;
 	}
@@ -17,11 +17,11 @@ public class UpdateSearchRequest {
 	public void setServiceCategory(int serviceCategory) {
 		this.serviceCategory = serviceCategory;
 	}
-	public int getAction() {
-		return action;
+	public int getActive() {
+		return active;
 	}
-	public void setAction(int action) {
-		this.action = action;
+	public void setActive(int active) {
+		this.active = active;
 	}
 	
 	

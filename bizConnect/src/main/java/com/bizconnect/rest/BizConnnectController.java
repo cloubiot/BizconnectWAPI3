@@ -49,10 +49,21 @@ public class BizConnnectController {
 	public SuccessIDResponse saveServiceData(@RequestBody ServiceData request){
 		SuccessIDResponse response = new SuccessIDResponse();
 		try{
-			ServiceData service = new ServiceData();
-			BeanUtils.copyProperties(request, service);
-			bizconnectService.updateService(service);
-			logger.info("new service added");
+			System.out.println("request : "+JSONUtil.toJson(request));
+			ServiceData service = bizconnectService.updateSearch(request.getPhone(), request.getServiceCategory());
+			if(service == null){
+				service.setDevice(request.getDevice());
+				service.setPhone(request.getPhone());
+				service.setServiceType(request.getServiceType());
+				service.setServiceCategory(request.getServiceCategory());
+				service.setAction(1);
+				bizconnectService.updateService(service);
+				logger.info("new service added");
+			}
+			else{
+				response.setSuccess(false);
+				logger.info("duplicate value");
+			}
 		}
 		catch(Exception e){
 			logger.error("service failed",e);
@@ -113,9 +124,8 @@ public class BizConnnectController {
 	public SuccessIDResponse updateSearch(@RequestBody UpdateSearchRequest request){
 		SuccessIDResponse response = new SuccessIDResponse();
 		try{
-			ServiceData service = bizconnectService.updateSearch(request.getPhone());
-			service.setServiceCategory(request.getServiceCategory());
-			service.setAction(request.getAction());
+			ServiceData service = bizconnectService.updateSearch(request.getPhone(),request.getServiceCategory());
+			service.setAction(request.getActive());
 			bizconnectService.updateService(service);
 			logger.info("update search");
 		}

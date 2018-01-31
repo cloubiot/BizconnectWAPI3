@@ -14,7 +14,7 @@ public class ServiceData {
 	String device;
 	int serviceCategory;
 	int serviceType;
-	int action;
+	int active;
 	
 	public int getId() {
 		return id;
@@ -46,11 +46,11 @@ public class ServiceData {
 	public void setDevice(String device) {
 		this.device = device;
 	}
-	public 	int getAction() {
-		return action;
+	public 	int getActive() {
+		return active;
 	}
-	public void setAction(int action) {
-		this.action = action;
+	public void setAction(int active) {
+		this.active = active;
 	}
 	
 	
