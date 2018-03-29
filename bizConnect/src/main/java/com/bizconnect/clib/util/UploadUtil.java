@@ -21,7 +21,7 @@ public class UploadUtil {
 	public static String DEFAULT_IMG_URL="avella/product_images/drugrx.png";
 	public static String USER_UPLOAD_WEB_ROOT="avella/pres_uploads";
 	public static String PRODUCT_IMAGES_WEB_ROOT="avella/product_images";
-	public static String USER_PROFILE_IMAGES_WEB_ROOT="avella/user_profile_images";
+	public static String USER_PROFILE_IMAGES_WEB_ROOT="image_uploads/user_profile_images";
 	
 	public static String getTodayDir(String baseDir){
 		

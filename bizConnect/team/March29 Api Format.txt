@@ -1,0 +1,13 @@
+Api 
+1.CreateAccount:
+
+localhost:8080/bizconnect/usermgmt/createAccount
+
+
+2.login:
+localhost:8080/bizconnect/usermgmt/login
+
+
+
+3.uploadProfileImage:
+localhost:8080/bizconnect/upload/uploadImage
